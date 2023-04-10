@@ -58,14 +58,14 @@ const init = async () => {
 
   const rollbarConfig = {
     enabled: true,
-    accessToken: process.secrets.REACT_APP_ROLLBAR_ACCESS_TOKEN,
-    // accessToken: process.env.REACT_APP_ROLLBAR_ACCESS_TOKEN,
+    accessToken: process.env.ROLLBAR_ACCESS_TOKEN,
+    environment: 'errors',
     captureUncaught: true,
     captureUnhandledRejections: true,
   };
   function TestError() {
     const a = null;
-    return a.hello();
+    return a.AAA();
   }
   return (
     <RollbarProvider config={rollbarConfig}>
