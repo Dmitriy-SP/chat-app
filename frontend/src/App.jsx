@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
-import { 
-  BrowserRouter, 
+import {
+  BrowserRouter,
   Navigate,
   Route,
   Routes,
@@ -38,9 +38,9 @@ const AuthProvider = ({ children }) => {
   );
 };
 
-const PrivateRoute = () => useAuth().user ? <Outlet /> : <Navigate to={routes.loginPage} />;
-const LoginPageRoute = () => useAuth().user ? <Navigate to="/" /> : <Login />;
-const SingUpPageRoute = () => useAuth().user ? <Navigate to="/" /> : <SingUp />;
+const PrivateRoute = () => (useAuth().user ? <Outlet /> : <Navigate to={routes.loginPage} />);
+const LoginPageRoute = () => (useAuth().user ? <Navigate to="/" /> : <Login />);
+const SingUpPageRoute = () => (useAuth().user ? <Navigate to="/" /> : <SingUp />);
 
 const App = () => (
   <AuthProvider>
