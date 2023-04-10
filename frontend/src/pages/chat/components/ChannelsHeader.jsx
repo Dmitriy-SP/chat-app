@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 const ChannelsHeader = ({ handleAddChannel }) => {
   const { t } = useTranslation();
   return (
-    <div className="d-flex justify-content-between mb-2 ps-4 pe-2">
+    <div className="d-flex justify-content-between mb-2 ps-4 pe-2 mt-3">
       <span>{t('channels.channels')}</span>
       <Button
         type="button"

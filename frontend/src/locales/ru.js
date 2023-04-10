@@ -56,7 +56,7 @@ const ru = {
       link: 'на главную страницу',
     },
     header: {
-      hexletChat: 'Hexlet Chat',
+      chatName: 'Chat App',
       logout: 'Выйти',
     },
     loading: 'Загрузка...',

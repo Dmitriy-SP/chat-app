@@ -58,14 +58,19 @@ const init = async () => {
 
   const rollbarConfig = {
     enabled: true,
-    accessToken: process.env.REACT_APP_ROLLBAR_ACCESS_TOKEN,
+    accessToken: process.secrets.REACT_APP_ROLLBAR_ACCESS_TOKEN,
+    // accessToken: process.env.REACT_APP_ROLLBAR_ACCESS_TOKEN,
     captureUncaught: true,
     captureUnhandledRejections: true,
   };
-
+  function TestError() {
+    const a = null;
+    return a.hello();
+  }
   return (
     <RollbarProvider config={rollbarConfig}>
       <ErrorBoundary>
+      <TestError />
         <Provider store={store}>
           <I18nextProvider i18nextInstance={i18nextInstance}>
             <SocketContext.Provider value={{ api }}>

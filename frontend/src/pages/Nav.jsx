@@ -13,7 +13,7 @@ const Nav = () => {
     (
       <nav className="shadow-sm navbar navbar-expand-lg navbar-light bg-white">
         <div className="container">
-          <Link className="navbar-brand" to={routes.homePage}>{t('header.hexletChat')}</Link>
+          <Link className="navbar-brand" to={routes.homePage}>{t('header.chatName')}</Link>
           {!!user && <Button type="button" onClick={logOut}>{t('header.logout')}</Button>}
         </div>
       </nav>
