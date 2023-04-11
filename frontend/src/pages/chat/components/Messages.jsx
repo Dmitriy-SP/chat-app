@@ -4,10 +4,11 @@ import { messagesAdapter } from '../../../store/slices/messagesSlice';
 
 const getMessagesForCurrentChannel = (state) => {
   const { currentChannelId } = state.channels;
-  const messages = messagesAdapter.getSelectors((state) => state.messages).selectAll(state);
+  const messages = messagesAdapter
+    .getSelectors((storeState) => storeState.messages)
+    .selectAll(state);
   return messages.filter((message) => message.channelId === currentChannelId);
 };
-
 
 const Message = ({ username, body }) => (
   <div className="text-break mb-2">

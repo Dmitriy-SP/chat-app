@@ -24,11 +24,10 @@ const AddNewChannel = ({ handleClose }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const { api } = useChatApi();
-  const channels = useSelector((state) => 
-    channelsAdapter.getSelectors((state) => state.channels)
-      .selectAll(state)
-      .map((channel) => channel.name)
-  );
+  const channels = useSelector((state) => channelsAdapter
+    .getSelectors((storeState) => storeState.channels)
+    .selectAll(state)
+    .map((channel) => channel.name));
 
   const formik = useFormik({
     initialValues: {
@@ -108,15 +107,14 @@ const AddNewChannel = ({ handleClose }) => {
 const RenameChannel = ({ handleClose }) => {
   const { t } = useTranslation();
   const { api } = useChatApi();
-  const channels = useSelector((state) => 
-  channelsAdapter.getSelectors((state) => state.channels)
+  const channels = useSelector((state) => channelsAdapter
+    .getSelectors((storeState) => storeState.channels)
     .selectAll(state)
-    .map((channel) => channel.name)
-  );
+    .map((channel) => channel.name));
   const channelId = useSelector((state) => state.modal.channelId);
-  const channel = useSelector((state) => channelsAdapter.getSelectors((state) => state.channels)
-    .selectById(state, channelId)
-  );
+  const channel = useSelector((state) => channelsAdapter
+    .getSelectors((storeState) => storeState.channels)
+    .selectById(state, channelId));
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -262,6 +260,7 @@ const getModalWindow = (modalType) => {
       return RemoveChannel;
     default:
   }
+  return '';
 };
 
 const Modals = () => {
