@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { createAsyncThunk, createSlice, miniSerializeError } from '@reduxjs/toolkit';
 import axios from 'axios';
 import routes from '../../routes';
