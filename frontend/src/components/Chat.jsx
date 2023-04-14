@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
@@ -32,7 +33,7 @@ const Chat = () => {
         }
         toast.error(t('errors.unknown'));
       });
-  }, [dispatch, user, loadingStatus, logOut, t, error]);
+  }, [dispatch, user]);
 
   return loading ? (
     <div className="h-100 d-flex justify-content-center align-items-center">
