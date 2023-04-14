@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import { Spinner } from 'react-bootstrap';
-import ChatBox from './components/ChatBox';
-import ChannelsBox from './components/ChannelsBox';
-import Modals from './components/Modals';
-import { fetchAuthData } from '../../store/slices/loaderSlice';
-import { useAuth } from '../../context';
+import ChatBox from './ChatBox.jsx';
+import ChannelsBox from './ChannelsBox.jsx';
+import Modals from './Modals.jsx';
+import { fetchAuthData } from '../store/slices/loaderSlice.js';
+import { useAuth } from '../context/index.jsx';
 
 const Chat = () => {
   const { t } = useTranslation();
@@ -18,23 +18,21 @@ const Chat = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    dispatch(fetchAuthData(user.token));
-  }, [dispatch, user]);
-
-  useEffect(() => {
-    if (loadingStatus === 'finish') setLoading(false);
-
-    if (loadingStatus === 'failed') {
-      if (error.status === 401) {
-        logOut();
-      }
-      if (error === 'AxiosError') {
-        toast.error(t('errors.network'));
-        return;
-      }
-      toast.error(t('errors.unknown'));
-    }
-  }, [loadingStatus, logOut, t, dispatch, error]);
+    dispatch(fetchAuthData(user.token))
+      .then(() => {
+        if (loadingStatus === 'finish') setLoading(false);
+      })
+      .catch(() => {
+        if (error.status === 401) {
+          logOut();
+        }
+        if (error === 'AxiosError') {
+          toast.error(t('errors.network'));
+          return;
+        }
+        toast.error(t('errors.unknown'));
+      });
+  }, [dispatch, user, loadingStatus, logOut, t, error]);
 
   return loading ? (
     <div className="h-100 d-flex justify-content-center align-items-center">

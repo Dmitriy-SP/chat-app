@@ -1,7 +1,7 @@
 import React from 'react';
-import ChatHeader from './ChatHeader';
-import NewMessageBox from './NewMessageBox';
-import Messages from './Messages';
+import ChatHeader from './ChatHeader.jsx';
+import NewMessageBox from './NewMessageBox.jsx';
+import Messages from './Messages.jsx';
 
 const ChatBox = () => (
   <div className="d-flex flex-column h-100">

@@ -7,11 +7,11 @@ import {
   Outlet,
 } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import Chat from './pages/chat/Chat.jsx';
-import Login from './pages/Login.jsx';
-import Nav from './pages/Nav.jsx';
-import SingUp from './pages/SingUp.jsx';
-import NotFoundPage from './pages/NotFoundPage.jsx';
+import Chat from './components/Chat.jsx';
+import Login from './components/Login.jsx';
+import Nav from './components/Nav.jsx';
+import SingUp from './components/SingUp.jsx';
+import NotFoundPage from './components/NotFoundPage.jsx';
 import AuthContext, { useAuth } from './context/index.jsx';
 import routes from './routes.js';
 

@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { Provider as RollbarProvider, ErrorBoundary } from '@rollbar/react';
 import store from './store/index.js';
 import App from './App.jsx';
-import { SocketContext } from './context/index.jsx';
+import { ApiContext } from './context/index.jsx';
 import { addMessage } from './store/slices/messagesSlice.js';
 import { addChannel, deleteChannel, updateChannel } from './store/slices/channelsSlice.js';
 import resources from './locales/index.js';
@@ -65,17 +65,19 @@ const init = async () => {
   };
 
   return (
-    <RollbarProvider config={rollbarConfig}>
-      <ErrorBoundary>
-        <Provider store={store}>
-          <I18nextProvider i18nextInstance={i18nextInstance}>
-            <SocketContext.Provider value={{ api }}>
-              <App />
-            </SocketContext.Provider>
-          </I18nextProvider>
-        </Provider>
-      </ErrorBoundary>
-    </RollbarProvider>
+    <React.StrictMode>
+      <RollbarProvider config={rollbarConfig}>
+        <ErrorBoundary>
+          <Provider store={store}>
+            <I18nextProvider i18nextInstance={i18nextInstance}>
+              <ApiContext.Provider value={{ api }}>
+                <App />
+              </ApiContext.Provider>
+            </I18nextProvider>
+          </Provider>
+        </ErrorBoundary>
+      </RollbarProvider>
+    </React.StrictMode>
   );
 };
 

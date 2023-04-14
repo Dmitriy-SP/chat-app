@@ -3,8 +3,8 @@ import { Button, ButtonGroup, Dropdown } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import ChannelsHeader from './ChannelsHeader';
-import { openModal } from '../../../store/slices/modalSlice.js';
-import { setCurrentChannelId, channelsAdapter } from '../../../store/slices/channelsSlice';
+import { openModal } from '../store/slices/modalSlice.js';
+import { setCurrentChannelId, channelsAdapter } from '../store/slices/channelsSlice';
 
 const ChannelsBox = () => {
   const dispatch = useDispatch();

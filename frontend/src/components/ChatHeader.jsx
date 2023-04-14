@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { messagesAdapter } from '../../../store/slices/messagesSlice';
+import { messagesAdapter } from '../store/slices/messagesSlice.js';
 
 const getMessagesForCurrentChannel = (state) => {
   const { currentChannelId } = state.channels;

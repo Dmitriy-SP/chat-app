@@ -21,13 +21,10 @@ const Login = () => {
     onSubmit: async (values, actions) => {
       try {
         const { data } = await axios.post(routes.login, values);
-        if (data.token) {
-          const user = { token: data.token, username: data.username };
-          logIn(user);
-          navigate(routes.homePage);
-        }
+        const user = { token: data.token, username: data.username };
+        logIn(user);
+        navigate(routes.homePage);
       } catch (error) {
-        actions.setSubmitting(false);
         if (!error.isAxiosError) {
           toast.error(t('errors.unknown'));
           return;

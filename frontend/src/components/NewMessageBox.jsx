@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import leoProfanity from 'leo-profanity';
 import { toast } from 'react-toastify';
-import { useAuth, useChatApi } from '../../../context';
+import { useAuth, useChatApi } from '../context/index.jsx';
 
 const NewMessageBox = () => {
   const { t } = useTranslation();
