@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
@@ -19,21 +18,21 @@ const Chat = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    dispatch(fetchAuthData(user.token))
-      .then(() => {
-        if (loadingStatus === 'finish') setLoading(false);
-      })
-      .catch(() => {
-        if (error.status === 401) {
-          logOut();
-        }
-        if (error === 'AxiosError') {
-          toast.error(t('errors.network'));
-          return;
-        }
-        toast.error(t('errors.unknown'));
-      });
-  }, [dispatch, user]);
+    if (loadingStatus !== 'finish') {
+      dispatch(fetchAuthData(user.token))
+        .then(() => setLoading(false))
+        .catch(() => {
+          if (error.status === 401) {
+            logOut();
+          }
+          if (error === 'AxiosError') {
+            toast.error(t('errors.network'));
+            return;
+          }
+          toast.error(t('errors.unknown'));
+        });
+    }
+  }, [dispatch, user, loadingStatus, logOut, t, error]);
 
   return loading ? (
     <div className="h-100 d-flex justify-content-center align-items-center">
