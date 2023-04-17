@@ -6,9 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import * as yup from 'yup';
 import leoProfanity from 'leo-profanity';
-import { closeModal } from '../store/slices/modalSlice.js';
+import { closeModal } from '../store/modalSlice.js';
 import { useChatApi } from '../context/index.jsx';
-import { setCurrentChannelId, channelsAdapter } from '../store/slices/channelsSlice.js';
+import { setCurrentChannelId, channelsAdapter } from '../store/channelsSlice.js';
 
 const channelNameValidationSchema = (channels) => yup.object().shape({
   name: yup

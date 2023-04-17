@@ -8,8 +8,8 @@ import { Provider as RollbarProvider, ErrorBoundary } from '@rollbar/react';
 import store from './store/index.js';
 import App from './App.jsx';
 import { ApiContext } from './context/index.jsx';
-import { addMessage } from './store/slices/messagesSlice.js';
-import { addChannel, deleteChannel, updateChannel } from './store/slices/channelsSlice.js';
+import { addMessage } from './store/messagesSlice.js';
+import { addChannel, deleteChannel, updateChannel } from './store/channelsSlice.js';
 import resources from './locales/index.js';
 
 const init = async () => {
