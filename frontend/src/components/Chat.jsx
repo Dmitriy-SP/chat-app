@@ -26,10 +26,11 @@ const Chat = () => {
             return;
           case '401':
             logOut();
+            break;
           case 'unknown':
           default:
-            toast.error(t('errors.unknown'));
         }
+        toast.error(t('errors.unknown'));
       });
   }, [dispatch, user, logOut, t]);
 
