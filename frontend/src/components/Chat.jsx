@@ -6,7 +6,7 @@ import { Spinner } from 'react-bootstrap';
 import ChatBox from './ChatBox.jsx';
 import ChannelsBox from './ChannelsBox.jsx';
 import Modals from './Modals.jsx';
-import fetchAuthData from '../store/fetchAuthData.js';
+import fetchAuthData from '../utils/fetchAuthData.js';
 import { useAuth } from '../context/index.jsx';
 
 const Chat = () => {

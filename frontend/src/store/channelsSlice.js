@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
-import fetchAuthData from './fetchAuthData.js';
+import fetchAuthData from '../utils/fetchAuthData.js';
 
 export const channelsAdapter = createEntityAdapter();
 const initialState = channelsAdapter.getInitialState({
