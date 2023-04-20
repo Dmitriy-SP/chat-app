@@ -1,7 +1,7 @@
 # Chat App
 
 [![Actions Status](https://github.com/Dmitriy-SP/frontend-project-12/workflows/hexlet-check/badge.svg)](https://github.com/Dmitriy-SP/frontend-project-12/actions)
-[![linter status](https://github.com/Dmitriy-SP/frontend-project-12/actions/workflows/linter-status.yml/badge.svg)](https://github.com/Dmitriy-SP/frontend-project-12/actions)
+[![linter status](https://github.com/Dmitriy-SP/frontend-project-12/workflows/linter-status/badge.svg)](https://github.com/Dmitriy-SP/frontend-project-12/actions)
 <a href="https://codeclimate.com/github/Dmitriy-SP/frontend-project-12/maintainability"><img src="https://api.codeclimate.com/v1/badges/6eb388f97a565f0897df/maintainability" /></a>
 
 Chat App is a real-time application similar to Slack-chat (very simplified version).<br>
@@ -13,7 +13,8 @@ Chat App is a real-time application similar to Slack-chat (very simplified versi
 ## Description
 
 A simplified version of Slack chat. The chat has a system of registration, authorization.
-The chat has the ability to create channels, change channel names and delete them.
+The chat has the ability to create channels, change channel names and delete them.![badge](https://user-images.githubusercontent.com/109819231/233409835-0797582a-e4e9-43d9-bba5-28af18fe33bb.svg)
+
 
 #### Default login & password: admin
 
