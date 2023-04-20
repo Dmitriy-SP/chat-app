@@ -6,15 +6,33 @@
 Chat App is a real-time application similar to Slack-chat (very simplified version).<br>
 <a href="https://frontend-project-12-production-1bc9.up.railway.app/">You can try web-version on Railway.</a>
 
-## Setup
+- [Description](#Description)
+- [Installation](#Installation)
 
-```bash
+## Description
+
+A simplified version of Slack chat. The chat has a system of registration, authorization.
+The chat has the ability to create channels, change channel names and delete them.
+
+#### Default login & password: admin
+
+### Installation:
+
+```
+git clone: git@github.com:Dmitriy-SP/frontend-project-12.git
+```
+```
 make install
 ```
-
-## Development
-
-```bash
-make start
 ```
+make start
+``` - run the frontend & backend
+```
+make start-frontend
+``` - run only frontend
+
 On *localhost:3000*
+
+```
+make start-backend
+``` - run only backend
