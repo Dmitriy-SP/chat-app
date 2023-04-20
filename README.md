@@ -21,25 +21,19 @@ The chat has the ability to create channels, change channel names and delete the
 ```
 git clone: git@github.com:Dmitriy-SP/frontend-project-12.git
 ```
-
 ```
 make install
 ```
-
+run the frontend & backend:
 ```
 make start
 ```
-
-- run the frontend & backend
-
+run only frontend:
 ```
 make start-frontend
 ```
-- run only frontend
-
-On *localhost:3000*
-
+run only backend:
 ```
 make start-backend
 ```
-- run only backend
+- On *localhost:3000*
