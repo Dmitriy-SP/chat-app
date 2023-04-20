@@ -1,6 +1,7 @@
 # Chat App
 
 [![Actions Status](https://github.com/Dmitriy-SP/frontend-project-12/workflows/hexlet-check/badge.svg)](https://github.com/Dmitriy-SP/frontend-project-12/actions)
+[![linter status](https://github.com/Dmitriy-SP/frontend-project-12/actions/workflows/linter-status.yml/badge.svg)](https://github.com/Dmitriy-SP/frontend-project-12/actions/workflows/linter-status.yml)
 <a href="https://codeclimate.com/github/Dmitriy-SP/frontend-project-12/maintainability"><img src="https://api.codeclimate.com/v1/badges/6eb388f97a565f0897df/maintainability" /></a>
 
 Chat App is a real-time application similar to Slack-chat (very simplified version).<br>
