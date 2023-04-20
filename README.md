@@ -16,7 +16,7 @@ The chat has the ability to create channels, change channel names and delete the
 
 #### Default login & password: admin
 
-### Installation:
+## Installation:
 
 ```
 git clone git@github.com:Dmitriy-SP/frontend-project-12.git
