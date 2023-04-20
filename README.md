@@ -13,7 +13,7 @@ Chat App is a real-time application similar to Slack-chat (very simplified versi
 ## Description
 
 A simplified version of Slack chat. The chat has a system of registration, authorization.
-The chat has the ability to create channels, change channel names and delete them.![badge](https://user-images.githubusercontent.com/109819231/233409835-0797582a-e4e9-43d9-bba5-28af18fe33bb.svg)
+The chat has the ability to create channels, change channel names and delete them.
 
 
 #### Default login & password: admin
