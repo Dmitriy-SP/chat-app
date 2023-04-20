@@ -6,7 +6,7 @@ import { Spinner } from 'react-bootstrap';
 import ChatBox from './ChatBox.jsx';
 import ChannelsBox from './ChannelsBox.jsx';
 import Modals from './Modals.jsx';
-import fetchAuthData from '../utils/fetchAuthData.js';
+import fetchAuthData from '../store/fetchAuthData.js';
 import { useAuth } from '../context/index.jsx';
 
 const Chat = () => {
@@ -20,15 +20,12 @@ const Chat = () => {
     dispatch(fetchAuthData(user.token))
       .then(() => setLoading(false))
       .catch((error) => {
-        switch (error.status) {
-          case 'AxiosError':
-            toast.error(t('errors.network'));
-            return;
-          case '401':
-            logOut();
-            break;
-          case 'unknown':
-          default:
+        if (error.body === 'AxiosError') {
+          toast.error(t('errors.network'));
+          return;
+        }
+        if (error.status === '401') {
+          logOut();
         }
         toast.error(t('errors.unknown'));
       });
