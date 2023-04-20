@@ -19,7 +19,7 @@ The chat has the ability to create channels, change channel names and delete the
 ### Installation:
 
 ```
-git clone: git@github.com:Dmitriy-SP/frontend-project-12.git
+git clone git@github.com:Dmitriy-SP/frontend-project-12.git
 ```
 ```
 make install
